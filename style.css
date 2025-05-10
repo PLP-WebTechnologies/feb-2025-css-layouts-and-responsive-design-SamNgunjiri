@@ -1,0 +1,106 @@
+/* Base Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    line-height: 1.6;
+    background-color: #f9f9f9;
+    color: #333;
+  }
+  
+  /* Navigation Bar */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #004080;
+    padding: 1rem 2rem;
+    color: white;
+  }
+  
+  .logo {
+    font-size: 1.5rem;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+  }
+  
+  .nav-links li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+  }
+  
+  /* Main Layout using CSS Grid */
+  .main-content {
+    display: grid;
+    grid-template-areas: 
+      "sidebar content extra";
+    grid-template-columns: 1fr 2fr 1fr;
+    gap: 1rem;
+    padding: 2rem;
+  }
+  
+  .sidebar {
+    grid-area: sidebar;
+    background-color: #cce5ff;
+    padding: 1rem;
+  }
+  
+  .content {
+    grid-area: content;
+    background-color: #e6f2ff;
+    padding: 1rem;
+  }
+  
+  .extra {
+    grid-area: extra;
+    background-color: #b3d1ff;
+    padding: 1rem;
+  }
+  
+  .footer {
+    text-align: center;
+    background-color: #004080;
+    color: white;
+    padding: 1rem;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 1024px) {
+    .main-content {
+      grid-template-areas: 
+        "sidebar content"
+        "extra extra";
+      grid-template-columns: 1fr 2fr;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .navbar {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .nav-links {
+      flex-direction: column;
+      gap: 0.5rem;
+      margin-top: 0.5rem;
+    }
+  
+    .main-content {
+      grid-template-areas:
+        "content"
+        "sidebar"
+        "extra";
+      grid-template-columns: 1fr;
+    }
+  }
+  
